@@ -1,3 +1,5 @@
+[![assignment-test](https://github.com/cu-ecen-aeld/assignment-1-sram022/actions/workflows/github-actions.yml/badge.svg?branch=main)](https://github.com/cu-ecen-aeld/assignment-1-sram022/actions/workflows/github-actions.yml)
+
 # aesd-assignments
 This repo contains public starter source code, scripts, and documentation for Advanced Embedded Software Development (ECEN-5713) and Advanced Embedded Linux Development assignments University of Colorado, Boulder.
 
@@ -25,5 +27,5 @@ to synchronize after cloning and before starting each assignment, as discussed i
 
 As a part of the assignment instructions, you will setup your assignment repo to perform automated testing using github actions.  See [this page](https://github.com/cu-ecen-aeld/aesd-assignments/wiki/Setting-up-Github-Actions) for details.
 
-[![assignment-test](https://github.com/cu-ecen-aeld/assignment-1-sram022/actions/workflows/github-actions.yml/badge.svg?branch=main)](https://github.com/cu-ecen-aeld/assignment-1-sram022/actions/workflows/github-actions.yml)
+
 
