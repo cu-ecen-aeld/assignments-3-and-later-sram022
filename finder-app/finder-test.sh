@@ -10,6 +10,12 @@ WRITESTR=AELD_IS_FUN
 WRITEDIR=/tmp/aeld-data
 username=$(cat conf/username.txt)
 
+rm -f writer *.o
+if [ -x "./writer" ]; then
+    echo "ERROR: make clean does not clean up the writer executable in finder-app"
+    exit 1
+fi
+
 if [ $# -lt 3 ]
 then
 	echo "Using default value ${WRITESTR} for string to write"
@@ -51,10 +57,11 @@ fi
 #echo "Removing the old writer utility and compiling as a native application"
 #make clean
 #make
+make
 
 for i in $( seq 1 $NUMFILES)
 do
-	./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
