@@ -1,6 +1,7 @@
 #!/bin/sh
 # Tester script for assignment 1 and assignment 2
 # Author: Siddhant Jajoo
+#  Modified By: Sriram Rajkumar
 
 set -e
 set -u
@@ -57,7 +58,7 @@ fi
 #echo "Removing the old writer utility and compiling as a native application"
 #make clean
 #make
-make
+
 
 for i in $( seq 1 $NUMFILES)
 do
