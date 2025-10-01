@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Author: Sriram Rajkumar
 
 # Check if both arguments are provided
