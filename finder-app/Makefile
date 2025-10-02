@@ -3,6 +3,8 @@ CFLAGS = -g -Wall -Wextra -std=c11
 
 
 
+all: writer
+
 writer: writer.c
 	$(CROSS_COMPILE)$(CC) $(CFLAGS) -o writer writer.c
 
