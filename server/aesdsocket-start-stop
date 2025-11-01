@@ -4,6 +4,11 @@
 DAEMON_NAME="aesdsocket"
 BASEDIR="$(cd "$(dirname "$0")" && pwd)"
 DAEMON="$BASEDIR/$DAEMON_NAME"
+if [ ! -x "$DAEMON" ]; then
+    echo "Warning: executable not found in default path: $DAEMON"
+    DAEMON="/usr/bin/$DAEMON_NAME"
+
+fi
 DAEMON_OPTS="-d"
 PIDFILE="/var/run/${DAEMON_NAME}.pid"
 
