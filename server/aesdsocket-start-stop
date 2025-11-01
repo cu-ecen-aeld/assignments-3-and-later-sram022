@@ -21,7 +21,7 @@ start() {
     fi
 
     # Check if already running
-    if pgrep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
+    if ps | grep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
         echo "$DAEMON_NAME already running."
         exit 0
     fi
@@ -30,7 +30,7 @@ start() {
     start-stop-daemon --start --quiet --exec "$DAEMON" -- $DAEMON_OPTS
     sleep 0.5
 
-    if pgrep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
+    if ps | grep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
         echo "$DAEMON_NAME started."
     else
         echo "Failed to start $DAEMON_NAME."
@@ -45,12 +45,12 @@ stop() {
     start-stop-daemon --stop --quiet --exec "$DAEMON" --signal TERM --retry 5
 
     # Verify Stop
-    if pgrep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
+    if ps | grep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
         echo "Process still running; sending SIGKILL..."
         start-stop-daemon --stop --quiet --exec "$DAEMON" --signal KILL --retry 3
     fi
 
-    if ! pgrep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
+    if ! ps | grep -f "$DAEMON $DAEMON_OPTS" > /dev/null; then
         echo "$DAEMON_NAME stopped."
     else
         echo "Failed to stop $DAEMON_NAME."
